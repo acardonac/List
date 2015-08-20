@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.listItemInput').focus();
 
     // Adds to list
-      .on('click', '.addToList', function() {
+      $('.addToList').on('click', function() {
         var itemToAdd = $('input[name="listItemInput"]').val().trim();
         if (itemToAdd) {
             $('.listItems').append('<div class="input"><input type="checkbox" name="item" class="item" value="' + itemToAdd + '" /> '+ itemToAdd +'</div>');
@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
 
     // Removes from list
-      .on('change', '.item', function() {
+      $('.item').on('change', function() {
         if($(this).is(':checked') ){
             var parentElem = $(this).parent();
             parentElem.effect('puff', 500, function() {
@@ -26,6 +26,6 @@ $(document).ready(function() {
         return false;
     });
 
-      $('.listItems').sortable();
+    // $('.listItems').sortable();
 
 });
